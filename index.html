@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to my favorite</title>
+    <link rel = "stylesheet" href = "/main.css">
+    <link rel="icon" href="/favicon_io/favicon.ico">
+</head>
+
+<body>
+    <div class="parent">
+        <div class="main-container">
+            <img class="main-image" src="/penguin.jpg"></img>
+            <h1>dear prachi (my favorite person ever) will you be my valentine?</h1>
+            <h1>sincerely, your boyfriend will</h1>
+            <div class="content-row">
+                <button class="button-yes">yes!</button>
+                <button class="button-no">no :/</button>
+            </div>
+        </div>
+        <img class="confetti" src="/confetti.gif"></img>
+    </div>
+</body>
+
+<script>
+  const button = document.querySelector('.button-no');
+  const img = document.querySelector('.main-image');
+  const buttonYes = document.querySelector('.button-yes');
+  const mainContainer = document.querySelector('.main-container');
+  const contentRow = document.querySelector('.content-row');
+  const confetti = document.querySelector('.confetti');
+
+    button.addEventListener('mouseenter', () => {
+        button.style.position="absolute"
+      const minDistance = 150;
+      const maxDistance = 250;
+
+      // Current position
+      const rect = button.getBoundingClientRect();
+      const currentX = rect.left + window.scrollX;
+      const currentY = rect.top + window.scrollY;
+
+      // Random angle and distance
+      const angle = Math.random() * 2 * Math.PI;
+      const distance = Math.random() * (maxDistance - minDistance) + minDistance;
+
+      // New position
+      let newX = currentX + Math.cos(angle) * distance;
+      let newY = currentY + Math.sin(angle) * distance;
+
+      // Button size
+      const buttonWidth = rect.width;
+      const buttonHeight = rect.height;
+
+      // Check if new position is outside viewport
+      const outOfBoundsX = newX < 0 || newX > window.innerWidth - buttonWidth;
+      const outOfBoundsY = newY < 0 || newY > window.innerHeight - buttonHeight;
+
+      if (outOfBoundsX || outOfBoundsY) {
+        // Move to center
+        newX = (window.innerWidth - buttonWidth) / 2;
+        newY = (window.innerHeight - buttonHeight) / 2;
+      }
+
+      button.style.left = newX + 'px';
+      button.style.top = newY + 'px';
+    });
+
+    buttonYes.addEventListener('click', () => {
+        mainContainer.removeChild(contentRow);
+
+        const yay = document.createElement('h1');
+        yay.textContent="YAYYAYAY! 💐❤️";
+
+        mainContainer.appendChild(yay);
+
+        img.src="/iloveyou.gif";
+        confetti.style.visibility="visible";
+
+    });
+
+</script>
+
+</html>

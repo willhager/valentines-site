@@ -1,0 +1,78 @@
+body {
+    background-color: #0C0F18;
+    color: #F2F2F2;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container{
+    background-color: #FF9AA2;
+    color: #0C0F18;
+    display: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 32px;
+    min-height: 42rem;
+}
+
+.main-image{
+    max-width: 20rem;
+    max-height: 20rem;
+    border-radius: 32px;
+}
+
+.content-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-yes{
+    font-size: 3rem;
+    margin: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background-color: #0C0F18;
+    color: #F2F2F2;
+    border-radius: 16px;
+    transition: background-color 0.1s ease, transform 0.1s ease;
+    border-style: hidden;
+
+}
+
+.button-yes:hover{
+    background-color:#FF4C61;
+    transform:scale(1.1);
+}
+
+.button-no{
+    font-size: 3rem;
+    margin: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background-color: #0C0F18;
+    color: whitesmoke;
+    border-radius: 16px;
+    transition: background-color 0.3s ease;
+    border: 2px solid #FF9AA2;
+    transition: left 0.1s ease, top 0.1s ease;
+}
+
+.confetti{
+    position: absolute;
+    height: 30rem;
+    width: 30rem;
+    top: -20px;
+    visibility: hidden;
+}
