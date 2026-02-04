@@ -19,7 +19,7 @@ body {
     text-align: center;
     padding: 1rem;
     border-radius: 32px;
-    min-height: 42rem;
+    min-height: 38rem;
 }
 
 .main-image{
@@ -28,10 +28,20 @@ body {
     border-radius: 32px;
 }
 
-.content-row{
+.button-row{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+.content-row-left{
+    display: flex;
+    justify-content: right;
+    width: 50%;
+}
+
+.content-row-right{
+    display: flex;
+    justify-content: left;
+    width: 50%;
 }
 
 .button-yes{
